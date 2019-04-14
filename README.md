@@ -22,7 +22,7 @@ We didn't provide the part of data process. If you want to run the code, you nee
 
 The schemas are list as follows:
 
-``` json
+``` 
 // train_single_3d.json
 [
     [the-path-to-train-image/xxx_001.png, label-of-this-img],
@@ -32,7 +32,7 @@ The schemas are list as follows:
 ]
 ```
 
-``` json
+``` 
 // test_single_3d.json
 [
     [the-path-to-test-image/yyy_001.png, label-of-this-img],
@@ -42,7 +42,7 @@ The schemas are list as follows:
 ]
 ```
 
-``` json
+``` 
 // train_3d.json
 [
     [the-path-to-train-image/xxx_, label-of-this-img],
@@ -52,7 +52,7 @@ The schemas are list as follows:
 ]
 ```
 
-``` json
+``` 
 // test_3d.json
 [
     [the-path-to-test-image/xxx_, label-of-this-img],
