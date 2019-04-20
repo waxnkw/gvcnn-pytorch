@@ -12,7 +12,7 @@ class MultiviewImgDataset(torch.utils.data.Dataset):
         self.rot_aug = rot_aug
         self.test_mode = test_mode
         self.num_views = num_views
-        self.classes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012']
+        self.classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
 
         if self.test_mode:
             self.transform = transforms.Compose([
@@ -39,7 +39,7 @@ class MultiviewImgDataset(torch.utils.data.Dataset):
         classes = self.classes
 
         for suffix in classes:
-            im = Image.open(path+suffix+'.png').convert('RGB')
+            im = Image.open(path+"obj_whiteshaded_v"+suffix+'.png').convert('RGB')
             if self.transform:
                 im = self.transform(im)
             imgs.append(im)
@@ -50,7 +50,7 @@ class MultiviewImgDataset(torch.utils.data.Dataset):
 class SingleImgDataset(torch.utils.data.Dataset):
 
     def __init__(self, data_list, scale_aug=False, rot_aug=False, test_mode=False):
-        self.classes = ['001', '002', '003', '004', '005', '006', '007', '008', '009', '010', '011', '012']
+        self.classes = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']
 
         self.data_list = data_list
         self.scale_aug = scale_aug

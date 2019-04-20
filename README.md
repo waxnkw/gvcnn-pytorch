@@ -16,50 +16,16 @@ There are two main difference from the origin paper:
 1. Considering the huge amount of fc layer, we use 1*1 conv instead of fc in group schema module. 
 2. If all views' scores are very small, it may cause some problem in params' update. So we add a softmax to normalize the scores generate by group schema.
 
-## Data Process
+## Run
 
-We didn't provide the part of data process. If you want to run the code, you need to generate `train_single_3d.json`, `test_single_3d.json`, `train_3d.json`, `test_3d.json` by yourself.
+modify `root` in data_process.py to your ModelNet40 dataset.
 
-The schemas are list as follows:
-
-``` 
-// train_single_3d.json
-[
-    [the-path-to-train-image/xxx_001.png, label-of-this-img],
-    [the-path-to-train-image/xxx_002.png, label-of-this-img],
-    [the-path-to-train-image/xxx_003.png, label-of-this-img],
-    ......
-]
+``` sh
+python data_process.py
 ```
 
-``` 
-// test_single_3d.json
-[
-    [the-path-to-test-image/yyy_001.png, label-of-this-img],
-    [the-path-to-test-image/yyy_002.png, label-of-this-img],
-    [the-path-to-test-image/yyy_003.png, label-of-this-img],
-    ......
-]
-```
-
-``` 
-// train_3d.json
-[
-    [the-path-to-train-image/xxx_, label-of-this-img],
-    [the-path-to-train-image/yyy_, label-of-this-img],
-    [the-path-to-train-image/zzz_, label-of-this-img],
-    ......
-]
-```
-
-``` 
-// test_3d.json
-[
-    [the-path-to-test-image/xxx_, label-of-this-img],
-    [the-path-to-test-image/yyy_, label-of-this-img],
-    [the-path-to-test-image/zzz_, label-of-this-img],
-    ......
-]
+```sh
+python gvcnn_train.py
 ```
 
 ## Reference
